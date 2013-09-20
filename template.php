@@ -241,7 +241,7 @@ function open_framework_status_messages($variables) {
 	}
 	
     if (!empty($status_heading[$type])) {
-      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+      $output .= '<h2 class="hide-accessible">' . $status_heading[$type] . "</h2>\n";
     }
 
     if (count($messages) > 1) {
@@ -285,14 +285,14 @@ function open_framework_menu_local_tasks(&$vars) {
   $output = '';
 
   if ( !empty($vars['primary']) ) {
-    $vars['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $vars['primary']['#prefix'] = '<h2 class="hide-accessible">' . t('Primary tabs') . '</h2>';
     $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
     $vars['primary']['#suffix'] = '</ul>';
     $output .= drupal_render($vars['primary']);
   }
 
   if ( !empty($vars['secondary']) ) {
-    $vars['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $vars['primary']['#prefix'] = '<h2 class="hide-accessible">' . t('Primary tabs') . '</h2>';
     $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
     $vars['secondary']['#suffix'] = '</ul>';
     $output .= drupal_render($vars['secondary']);
@@ -309,7 +309,7 @@ function open_framework_menu_local_task($vars) {
 
   if (!empty($vars['element']['#active'])) {
     // Add text to indicate active tab for non-visual users.
-    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
+    $active = '<span class="hide-accessible">' . t('(active tab)') . '</span>';
 
     // If the link does not contain HTML already, check_plain() it now.
     // After we set 'html'=TRUE the link will not be sanitized by l().
@@ -547,8 +547,8 @@ function open_framework_breadcrumb(&$variables) {
   if ($show_breadcrumb == 'yes') {
     if (!empty($breadcrumb)) {
       // Provide a navigational heading to give context for breadcrumb links to
-      // screen-reader users. Make the heading invisible with .element-invisible.
-      $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+      // screen-reader users. Make the heading invisible with .hide-accessible.
+      $output = '<h2 class="hide-accessible">' . t('You are here') . '</h2>';
 
       $output .= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
     } else {

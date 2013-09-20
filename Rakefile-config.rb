@@ -17,12 +17,14 @@ WebBlocks.config[:src][:core][:dir] = "#{rootdir}/vendor/ucla/WebBlocks/src/core
 WebBlocks.config[:src][:adapters][:dir] = "#{rootdir}/vendor/ucla/WebBlocks/src/adapter"
 
 # Location of WebBlocks extensions directory
-WebBlocks.config[:src][:extension][:dir] = "#{rootdir}/vendor/ucla/WebBlocks/src/extension"
+WebBlocks.config[:src][:extension][:dir] = "#{rootdir}/vendor/ucla/WebBlocks/src/extension" 
 
-WebBlocks.config[:src][:adapter] = false
+# Location of the Open Framework extension to WebBlocks
+WebBlocks.config[:src][:extensions] << "#{rootdir}/blocks/open_framework"
 
-# Uncomment to enable Bootstrap (and add lines for each JS to include)
-# WebBlocks.config[:src][:adapter] = 'bootstrap'
+WebBlocks.config[:src][:adapter] = 'bootstrap'
+
+# Uncomment to add Bootstrap plugins
 # WebBlocks.config[:package][:bootstrap][:scripts] << 'modal'
 # WebBlocks.config[:package][:bootstrap][:scripts] << 'tooltip'
 # WebBlocks.config[:package][:bootstrap][:scripts] << 'popover'

@@ -9,6 +9,12 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php print $head_title; ?></title>
+  <link rel="stylesheet" href="<?php echo base_path() . '/' . path_to_theme(); ?>/css/blocks.css">
+  <script type="text/javascript" src="<?php echo base_path() . '/' . path_to_theme(); ?>/js/blocks.js"></script>
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="<?php echo base_path() . '/' . path_to_theme(); ?>/css/blocks-ie.css">
+  <script type="text/javascript" src="<?php echo base_path() . '/' . path_to_theme(); ?>/js/blocks-ie.js"></script>
+  <![endif]-->
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <!--[if IE 7]>
