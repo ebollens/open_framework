@@ -1,10 +1,7 @@
 /* theme options ********************* */
 /* ----- front page title ------------ */
-.front .title {
+.front:not(.show-title) .title {
 	display:none;
-}
-.front.show-title .title {
-	display:block;
 }
 /* ----- body background type -------- */
 body.photobg {
@@ -13,24 +10,20 @@ body.photobg {
 }
 /* ----- background color ------------ */
 .bodybg .sidebar .region {
-	padding:10px;
 	background-color: #fff;
 	background-color:rgba(255,255,255,0.9);
 }
 .bodybg .content-wrapper {
-	padding:10px;
 	background:#fff;
 }
 /* ----- borders -------------------- */
 .borders .sidebar .region,
 .borders .content-wrapper {
-	padding:10px;
 	border:1px solid #d4d4d4;
 }
 /* ------ rounded corners ----------- */
 .roundedcorners .sidebar .region,
 .roundedcorners .content-wrapper {
-	padding:10px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
@@ -43,22 +36,6 @@ body {
 }
 /* ----- custom fonts ---------------- */
 /* ----- text ------------------------ */
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height:1.3em;
-}
-p {
-	margin:0 0 1em;
-}
-em {
-	padding:0 3px 0 0;
-}
-strong {
-	font-weight:600;
-}
 quote,
 code {
 	margin:.5em 0;
@@ -208,20 +185,6 @@ input.btn-search:hover {
 	filter: alpha(opacity=60);
 	background:none repeat scroll 0 0 transparent;
 }
-/* ----- Invisible and Focusable Elements (skipnav) ----------------------- */
-.element-invisible {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-}
-.element-invisible.element-focusable:active,
-.element-invisible.element-focusable:focus {
-	position: static !important;
-	clip: auto;
-	overflow: visible;
-	height: auto;
-	padding: 0 1em;
-}
 /* ----- other ----------------------- */
 hr {
 	clear:both;
@@ -230,9 +193,6 @@ hr {
 /* ----- header region --------------- */
 .header {
 	margin:25px 0 30px;
-}
-.header-content {
-	clear:both;
 }
 /* ----- search box ------------------ */
 .nav-search {
@@ -281,21 +241,11 @@ nav-search .form-item,
 	max-height:100px;
 }
 /* ----- site title and slogan ------- */
-.site-name,
-#site-slogan {
-	color:inherit;
-	font-family:inherit;
+.site-name h1 {
 	line-height:1;
-	text-rendering:optimizelegibility;
-}
-.site-name {
-	font-weight:700;
-	font-size:44px;
 }
 #site-slogan {
-	margin-top:.3em;
-	font-size:24px;
-	line-height:1.1em;
+	font-size: 0.8em;
 }
 .site-name a,
 .site-name a:hover {
@@ -307,14 +257,11 @@ nav-search .form-item,
 }
 #name-and-slogan {
 	display:table-cell;
-	padding:20px 0 20px 10px;
+	padding:15px 0 0 20px;
 	vertical-align:middle;
 }
 /* navigation ************************ */
 /* ----- main navigation ------------- */
-.site-main-menu {
-	clear:both;
-}
 .site-main-menu ul li,
 .site-main-menu ul li.leaf,
 .site-main-menu ul li.expanded,
@@ -385,6 +332,9 @@ nav h2 {
 #navigation h2 {
 	position:absolute;
 	left:-10000px;
+}
+#navigation ul li.leaf {
+    list-style:none; /* override drupal ul li.leaf style */
 }
 #navigation .content ul li {
 	display:inline-block;
@@ -599,6 +549,7 @@ iframe {
 }
 /* helper classes ******************** */
 /* ----- Responsive Views Grids ------ */
+/* TODO: use WebBlocks primitives instead of explicit media queries */
 .views-grid-four .views-row { -moz-box-sizing: border-box; display: inline-block; margin-right: 1.7%; margin-bottom:20px; width: 23.3%; vertical-align:top;}
 .views-grid-four .views-row.views-row-4, .views-grid-four .views-row.views-row-8, .views-grid-four .views-row.views-row-12, .views-grid-four .views-row.views-row-16, .views-grid-four .views-row.views-row-20, .views-grid-four .views-row.views-row-24, .views-grid-four .views-row.views-row-28 {margin-right:0px;}
 .views-grid-four.views-grid-header-footer .view-header, .views-grid-four.views-grid-header-footer .view-content, .views-grid-four.views-grid-header-footer .view-footer {display:inline-block; vertical-align:top;}
@@ -658,16 +609,13 @@ iframe {
 .spacer {
 	margin-top:30px;
 }
-.float-left,
-.float-right {
-	float:left;
+.float-left {
 	margin-right:15px;
 	margin-bottom:15px;
 }
 .float-right {
-	float: right;
 	margin-left: 15px;
-	margin-right: 0;
+	margin-bottom:15px;
 }
 .float-none {
 	float:none;
@@ -720,18 +668,14 @@ html.js input.throbbing {
 	width:31.4917%;
 }
 }
-.row-fluid [class*="span"] {
+.row [class*="panel-"] {
 	min-height:0;
 }
-.row-fluid .float-right {
+.row .float-right {
 	float:right;
 }
-[class*="span"].clear-row {
-	clear:both;
-}
 .row-fluid .float-right,
-[class*="span"].next-row,
-[class*="span"].clear-row {
+[class*="panel-"].next-row {
 	margin-left:0;
 }
 .form-actions {

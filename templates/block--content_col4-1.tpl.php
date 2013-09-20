@@ -1,5 +1,5 @@
-<div class="row-fluid">
-  <div id="<?php print $block_html_id; ?>" class="span12 clearfix <?php print $classes; ?>"<?php print $attributes; ?>> <?php print render($title_prefix); ?>
+<div class="row">
+  <div id="<?php print $block_html_id; ?>" class="clearfix <?php print $classes; ?>"<?php print $attributes; ?>> <?php print render($title_prefix); ?>
     <?php if ($block->subject): ?>
     <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
     <?php endif;?>
